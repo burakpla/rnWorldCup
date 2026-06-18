@@ -7,7 +7,6 @@ import { RootStackParamList } from '../navigation/types';
 type Props = NativeStackScreenProps<RootStackParamList, 'Detail'>;
 
 export const DetailScreen: React.FC<Props> = ({ route }) => {
-  // Gelen veriyi route params üzerinden alıyoruz
   const { eventData } = route.params;
 
   return (
@@ -24,7 +23,6 @@ export const DetailScreen: React.FC<Props> = ({ route }) => {
           
           <View style={styles.divider} />
 
-          {/* Takım Detayları Layout */}
           <View style={styles.teamsRow}>
             <View style={styles.teamContainer}>
               <Image source={{ uri: eventData.strHomeTeamBadge }} style={styles.largeBadge} />
@@ -42,8 +40,6 @@ export const DetailScreen: React.FC<Props> = ({ route }) => {
           </View>
 
           <View style={styles.divider} />
-
-          {/* Ek Bilgiler */}
           <View style={styles.infoRow}>
             <Text style={styles.infoLabel}>Tarih:</Text>
             <Text style={styles.infoValue}>{eventData.dateEvent} - {eventData.strTime}</Text>
